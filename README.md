@@ -1,13 +1,8 @@
-# S-P_modbus2http
+# SPModbusJsonParser
 
-https://github.com/4-20ma/ModbusMaster
+Implementation of Soler&Palau Domeo/flexeo VMC Modbus comunication to JSON
 
-# Hardware
-* CONVERSOR RS-485 A TTL  1,9
-* CONVERTIDOR 3,3V AMS1117  1,65
-* TRANSCEPTOR WIFI ESP8266  3,99
-* PLACA UNIVERSAL  1,5 
-* CABLES UNIFILAR  3
-* TIRA PINES HEMBRA 0,35
-* TIRA PINES MACHO 0,35
-* 2 bloques de terminal 0.88
+## Used Libraries
+* ModbusMaster https://github.com/4-20ma/ModbusMaster
+* ArduinoJson https://github.com/bblanchon/ArduinoJson
+
