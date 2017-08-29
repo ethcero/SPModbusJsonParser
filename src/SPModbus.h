@@ -60,7 +60,7 @@
 #define FLOW_GAP_SELECTION 8
 #define MIN_FLOW_SELECTION 9
 #define MAX_FLOW_SELECTION 10
-#define MAX_FLOW_FREE_COOLING 11
+//#define MAX_FLOW_FREE_COOLING 11
 #define FLOW_RATE 15
 #define MIN_RATE_V 16
 #define MAX_RATE_V 17
@@ -77,28 +77,42 @@
 class SPModbus : public ModbusMaster
 {
 public:
-
-  char * getAllInJson();
+  uint8_t getCoilsInJson(String &output);
+  uint8_t getInputRegistersInJson(String &output);
+  uint8_t getHoldingRegistersInJson(String &output);
+  uint8_t getDiscreteInputsInJson(String &output);
 
   /**
     param: data
       - 0 deactivate
       - 1 activate
   */
-  void writeManualBypass(uint8_t data);
+  uint8_t writeManualBypass(uint8_t data);
   /**
     param: data
       - 0 LOW
       - 1 MEDIUM(german version)/BOST(standard version)
       - 2 HIGH  only german version
   */
-  void writeFLowRate(uint8_t data);
-
+  uint8_t writeFLowRate(uint8_t data);
+  /**
+    param: data
+      - 0 activar reset
+      - 1 error reset
+  */
+  uint8_t writeFilterReset(uint8_t data);
+  /**
+    param: data
+      - 0 standby off
+      - 1 standby on
+  */
+  uint8_t writeActivationMode(uint8_t data);
 
 private:
 
-  uint16_t * readAllCoils();
-  uint16_t * readAllDiscreteInputs();
-  uint16_t * readAllHoldingRegisters();
-  uint16_t * readAllInputRegisters();
-}
+  uint8_t readAllCoils(uint16_t out[]);
+  uint8_t readAllDiscreteInputs(uint16_t out[]);
+  uint8_t readAllHoldingRegisters(uint16_t out[]);
+  uint8_t readAllInputRegisters(uint16_t out[]);
+
+};
