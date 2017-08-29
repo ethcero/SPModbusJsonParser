@@ -1,0 +1,26 @@
+{
+  "name": "SPModbusJsonParser",
+  "description": "SPModbusJsonParser",
+  "keywords": "esp",
+  "authors":
+  {
+    "name": "Francisco Franco",
+    "email": "francisco.franco@ethcero.es"
+  },
+  "repository":
+  {
+      "type": "git",
+      "url": "https://github.com/foo/bar.git"
+  },
+  "version": "0.0.3",
+  "dependencies":
+  [
+      {
+        "name": "ArduinoJson"
+      },
+      {
+        "name": "ModbusMaster"
+      }
+
+  ]
+}
