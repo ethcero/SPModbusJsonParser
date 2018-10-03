@@ -151,6 +151,16 @@ uint8_t SPModbus::writeFilterReset(uint8_t u8State)
   return writeSingleCoil(FILTER_ALARM_RESET, u8State);
 }
 
+uint8_t SPModbus::writeRawCoils(int number, int data)
+{
+  return writeSingleCoil(number, data);
+}
+
+uint8_t SPModbus::writeRawHoldingRegisters(int number, int data)
+{
+  return writeSingleRegister(number, data);
+}
+
 
 /**  PRIVATE FUNCTIONS **/
 

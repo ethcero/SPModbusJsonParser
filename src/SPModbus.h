@@ -108,6 +108,20 @@ public:
   */
   uint8_t writeActivationMode(uint8_t data);
 
+  /**
+    param: data
+      - 0 standby off
+      - 1 standby on
+  */
+  uint8_t writeRawCoils(int number, int data);
+
+  /**
+    param: data
+      - 0 standby off
+      - 1 standby on
+  */
+  uint8_t writeRawHoldingRegisters(int number, int data);
+
 private:
 
   uint8_t readAllCoils(uint16_t out[]);
